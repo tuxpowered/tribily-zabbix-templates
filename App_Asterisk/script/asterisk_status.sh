@@ -8,11 +8,12 @@
 # Variables
 ZBX_SENDER=`which zabbix_sender`
 ZBX_CONF="/etc/zabbix/zabbix_agentd.conf"
-VERSION="1.0"
+VERSION="1.1"
+VERBOSE=
 #
 
 function zsend {
-  $ZBX_SENDER -c $ZBX_CONF -k $1 -o $2
+  $ZBX_SENDER ${VERBOSE} -c $ZBX_CONF -k $1 -o $2
 }
 
 
